@@ -3,7 +3,7 @@
 ```
 data/raw/                           dados originais
 data/processed/                     dados tratados e consolidados
-docs/2027_relatorio_parcial/        relatório parcial para 2027
+docs/relatorio_parcial/             relatório parcial do projeto
 docs/relatorio_final                relatório final para o congresso
 docs/relatorios_antigos             relatórios de anos anteriores
 notebooks/                          explorações e consultas rápidas
