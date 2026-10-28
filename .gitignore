@@ -1,27 +1,13 @@
-# =============================================================================
-# .gitignore - ic-pub
-# O Git guarda CÓDIGO e DOCUMENTAÇÃO. Dados e resultados são regeneráveis
-# (limpeza -> consolidação -> levantamentos/figuras/comparação/multivariada)
-# e ficam de fora.
-# =============================================================================
- 
-# --- Dados (mantém só marcadores de pasta e LEIA-ME, se existirem) ------------
+# Dados
 data/raw/*
 !data/raw/.gitkeep
 !data/raw/LEIA-ME.md
 data/processed/*
-!data/processed/.gitkeep
-!data/processed/LEIA-ME.md
  
-# --- Resultados gerados pelos scripts -----------------------------------------
-# (comparacao_ti_comum/, figuras_por_ti/, levantamentos_por_ti/, multivariada/ ...)
+# Resultados gerados pelos scripts
 output/*
-!output/.gitkeep
-!output/LEIA-ME.md
  
-# --- Planilhas e arquivos pesados (em qualquer pasta) -------------------------
-# *.csv NÃO é ignorado globalmente: assim tabelas de referência em docs/ entram.
-# Os CSVs de dados já estão cobertos pelas regras de pasta acima.
+# Planilhas
 *.xlsx
 *.xlsb
 *.xls
@@ -29,15 +15,8 @@ output/*
 *.pkl
 *.joblib
  
-# --- Modelos / arquivos do Weka (descomente se não quiser versionar) ----------
-# *.model
-# *.arff
- 
-# --- Relatórios ---------------------------------------------------------------
-# Relatórios antigos: só consulta
+# Relatórios
 docs/relatorios_antigos/*
-!docs/relatorios_antigos/.gitkeep
-!docs/relatorios_antigos/LEIA-ME.md
  
 # Auxiliares do LaTeX
 *.aux
@@ -54,11 +33,8 @@ docs/relatorios_antigos/*
 *.nav
 *.snm
 *.vrb
- 
-# PDF compilado dos relatórios (descomente se quiser ignorar também)
-# docs/**/main.pdf
- 
-# --- Python -------------------------------------------------------------------
+  
+# Python
 __pycache__/
 *.py[cod]
 .venv/
@@ -68,11 +44,11 @@ env/
 .pytest_cache/
 .ipynb_checkpoints/
  
-# --- Segredos e ambiente local ------------------------------------------------
+# Ambiente local
 .env
 .env.*
  
-# --- Editor / sistema ---------------------------------------------------------
+# Editor
 .vscode/
 .idea/
 .DS_Store
