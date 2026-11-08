@@ -3,21 +3,27 @@ data/raw/*
 !data/raw/.gitkeep
 !data/raw/LEIA-ME.md
 data/processed/*
- 
+
 # Resultados gerados pelos scripts
 output/*
- 
-# Planilhas
+
+# Notebooks Jupyter
+notebooks/
+*.ipynb
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+# Planilhas e Arquivos de Dados Binários
 *.xlsx
 *.xlsb
 *.xls
 *.parquet
 *.pkl
 *.joblib
- 
+
 # Relatórios
 docs/relatorios_antigos/*
- 
+
 # Auxiliares do LaTeX
 *.aux
 *.log
@@ -33,7 +39,7 @@ docs/relatorios_antigos/*
 *.nav
 *.snm
 *.vrb
-  
+
 # Python
 __pycache__/
 *.py[cod]
@@ -42,17 +48,15 @@ venv/
 env/
 *.egg-info/
 .pytest_cache/
-.ipynb_checkpoints/
- 
+
 # Ambiente local
 .env
 .env.*
- 
-# Editor
+
+# Editor e Sistema Operacional
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 desktop.ini
 ~$*
- 

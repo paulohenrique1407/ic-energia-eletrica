@@ -1,7 +1,6 @@
 """
-Script: validar_tis.py
-Descrição: Agrupa a contagem de observações por famílias de TIs de 10 em 10.
-Gera output/comparacao_tis/output_validar_tis.csv.
+Agrupa a contagem de observações por famílias de TIs de 10 em 10,
+gera output/comparacao_tis/output_validar_tis.csv.
 """
 from pathlib import Path
 import pandas as pd

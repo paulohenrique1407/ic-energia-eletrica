@@ -1,9 +1,7 @@
 """
-Configurações e mapeamento das planilhas brutas das distribuidoras.
-
-Todos os campos utilizam os NOMES dos cabeçalhos.
-O script consolidar_base.py localiza automaticamente a linha do cabeçalho
-e mapeia a posição de cada coluna.
+Todos os campos utilizam os nomes dos cabeçalhos para
+o script consolidar_base.py localizar automaticamente a linha do cabeçalho
+e mapear a posição de cada coluna.
 """
 
 FONTES = [

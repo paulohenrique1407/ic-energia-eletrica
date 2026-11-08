@@ -1,6 +1,6 @@
 # Análise de Infraestrutura do Setor Elétrico (ANEEL)
 
-Este repositório contém a infraestrutura de código e a metodologia desenvolvida para a padronização, consolidação e análise estatística +*multivariada e figuras. dos ativos de distribuição de energia elétrica das concessionárias **CEMIG**, **ENEL SP**, **CPFL Piratininga** e **Equatorial Pará**, cobrindo os Tipos de Instalação de $0$ a $99$ ($\text{TIs } 0\text{--}99$).
+Este repositório contém a infraestrutura de código e a metodologia desenvolvida para a padronização, consolidação, analise descritiva e multivariada dos ativos de distribuição de energia elétrica das concessionárias **CEMIG**, **ENEL SP**, **CPFL Piratininga** e **Equatorial Pará**, cobrindo os Tipos de Instalação de $0$ a $99$ ($\text{TIs } 0\text{-}99$).
 
 ---
 
@@ -15,36 +15,34 @@ No ambiente regulatório da ANEEL, a valoração da infraestrutura de distribui�
 
 ## 2. Metodologia de Dupla Camada
 
-Para eliminar a ambiguidade observada em trabalhos anteriores, que alternavam sem aviso prévio entre a análise por item unitário e a análise por obra consolidada, o pipeline processa os dados em duas etapas:
+Para eliminar a ambiguidade observada no relatório anterior, que alternavam entre a análise por item unitário e a análise por obra consolidada, o pipeline processa os dados em duas etapas:
 
 ```
-                            Base Bruta de Dados (ANEEL)
+                            	Base Bruta de Dados
                                          │
                                          ▼
-              Consolidação, Expurgo (/Sobra Contabil, /Sobra Fisica) e Filtros
-                             (VOC > 0, VNR > 0, TI 0..99)
+              Consolidação, Expurgo (Sobra Contabil e Sobra Fisica) e Filtros
+                             (VOC > 0, VNR > 0, TI 0-99)
                                          │
                ┌─────────────────────────┴─────────────────────────┐
                ▼                                                   ▼
      CAMADA 1: Nível TUC                                 CAMADA 2: Nível Projeto
  (Unidade de Cadastro / Ativo)                         (Obra Consolidada PEP/ODI)
                │                                                   │
-               ├─ Sem Agrupamento por Obra                         ├─ Agrupamento PROJETO_UNIFICADO
+               ├─ Sem Agrupamento por Obra                         ├─ Agrupamento por obra
 ```
 
 ### 🔹 Camada 1 — Nível TUC (Unidade de Cadastro / Ativo Individual)
 
-Analisa cada componente físico unitário instalado
-
-* **Objetivo:** Avaliar o comportamento contábil e regulatório de itens individuais.
+Analisa cada componente físico unitário instalado por TI
 
 ### 🔹 Camada 2 — Nível Projeto (Obra Consolidada / PEP e ODI)
 
 Agrupa as linhas de ativos utilizando a chave unificada `PROJETO_UNIFICADO = PEP.fillna(ODI)` para calcular o investimento total de cada empreendimento.
 
-* **Objetivo:** Avaliar o custo total e a escala financeira de obras concluídas por distribuidora.
-
 ---
+
+
 
 ## 3. Estrutura do Repositório
 
@@ -83,7 +81,6 @@ ic-energia-eletrica/
 ```
 
 ---
-
 
 ## 4. Descrição das Saídas Geradas (`output/`)
 

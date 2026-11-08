@@ -1,7 +1,6 @@
 """
-Script: consolidar_base.py
-Descrição: Lê as planilhas brutas a partir dos NOMES dos cabeçalhos definidos em referencia_tcc.py.
-Localiza a linha do cabeçalho automaticamente, descarta sobras (SC/SF),
+Lê as planilhas brutas a partir dos nomes dos cabeçalhos definidos em referencia_tcc.py,
+localiza a linha do cabeçalho automaticamente, descarta as sobras,
 cria a chave PROJETO_UNIFICADO (PEP se existir, senão ODI) e mantém apenas linhas válidas com VOC > 0 e VNR > 0.
 Saída: data/processed/base_consolidada.csv
 """
@@ -15,7 +14,6 @@ DIRETORIO_RAIZ = Path(__file__).resolve().parent.parent
 DIRETORIO_RAW = DIRETORIO_RAIZ / "data" / "raw"
 ARQUIVO_SAIDA = DIRETORIO_RAIZ / "data" / "processed" / "base_consolidada.csv"
 
-# Garante que a raiz do projeto esteja no sys.path para importar referencia_tcc
 if str(DIRETORIO_RAIZ) not in sys.path:
     sys.path.insert(0, str(DIRETORIO_RAIZ))
 
@@ -114,18 +112,14 @@ def main():
     for coluna in ("PEP", "ODI", "STATUS_CONCILIACAO"):
         df_consolidado[coluna] = df_consolidado[coluna].mask(df_consolidado[coluna].isin(VALORES_VAZIOS))
 
-    # Filtro de TI válido (0 a 99)
     df_consolidado = df_consolidado[df_consolidado["TI"].between(0, 99)].copy()
     df_consolidado["TI"] = df_consolidado["TI"].astype(int)
 
-    # Exclusão de sobras contábeis (SC) e físicas (SF)
     mascara_sobras = df_consolidado["STATUS_CONCILIACAO"].fillna("CO").str.upper().str.contains("SC|SF")
     df_consolidado = df_consolidado[~mascara_sobras].copy()
 
-    # Chave Unificada de Projeto
     df_consolidado["PROJETO_UNIFICADO"] = df_consolidado["PEP"].fillna(df_consolidado["ODI"])
 
-    # Integridade financeira (VOC > 0 e VNR > 0)
     df_consolidado = df_consolidado[(df_consolidado["VOC"] > 0) & (df_consolidado["VNR"] > 0)].copy()
 
     df_consolidado.to_csv(ARQUIVO_SAIDA, index=False, encoding="utf-8-sig")

@@ -1,6 +1,5 @@
 """
-Script: teste_levene.py
-Descrição: Aplica o Teste de Levene para verificar igualdade de variâncias entre distribuidoras:
+Aplica o Teste de Levene para verificar igualdade de variâncias entre distribuidoras:
 1. levene_tuc.csv (Ativo Individual)
 2. levene_projetos.csv (Obra Consolidada)
 """

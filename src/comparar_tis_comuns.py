@@ -1,7 +1,6 @@
 """
-Script: comparar_tis_comuns.py
-Descrição: Mapeia presença/ausência (X / -) das TIs (0 a 99) entre as distribuidoras.
-Gera output/comparacao_tis/output_tis_comuns.csv.
+Mapeia presença/ausência das TIs (0 a 99) entre as distribuidoras,
+gera output/comparacao_tis/output_tis_comuns.csv.
 """
 from pathlib import Path
 import numpy as np

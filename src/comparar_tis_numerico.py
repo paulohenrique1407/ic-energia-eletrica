@@ -1,7 +1,6 @@
 """
-Script: comparar_tis_numerico.py
-Descrição: Conta os projetos únicos (PROJETO_UNIFICADO) por TI (0 a 99) nas distribuidoras.
-Gera output/comparacao_tis/output_projetos_tis.csv.
+conta os projetos únicos (PROJETO_UNIFICADO) por TI (0 a 99) nas distribuidoras,
+gera output/comparacao_tis/output_projetos_tis.csv.
 """
 from pathlib import Path
 import pandas as pd

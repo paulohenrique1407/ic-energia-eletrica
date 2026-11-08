@@ -1,6 +1,5 @@
 """
-Script: executar_pipeline.py
-Descrição: Apaga o diretório output/ e executa a sequência completa de scripts do pipeline.
+Apaga o diretório output/ e executa os scripts do pipeline.
 """
 import shutil
 import time
@@ -36,7 +35,7 @@ def main():
 
     limpar_diretorio_saida()
 
-    consolidar_base.main()
+    #consolidar_base.main()
     estatistica_descritiva.main()
     teste_levene.main()
     gerar_relatorio_conciliacao.main()

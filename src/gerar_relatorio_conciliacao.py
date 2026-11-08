@@ -1,7 +1,6 @@
 """
-Script: gerar_relatorio_conciliacao.py
-Descrição: Compara os novos resultados com a tabela verdade histórica do TCC (TIs 31, 33 e 38).
-Gera o relatório relatorio_conciliacao_tcc.csv.
+Compara os novos resultados com as tabelas do TCC (TIs 31, 33 e 38),
+gera o relatório relatorio_conciliacao_tcc.csv.
 """
 from pathlib import Path
 import numpy as np

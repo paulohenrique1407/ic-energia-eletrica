@@ -1,6 +1,5 @@
 """
-Script: estatistica_descritiva.py
-Descrição: Processa as estatísticas descritivas das 100 TIs em 2 camadas:
+Processa as estatísticas descritivas das 100 TIs em 2 camadas:
 1. descritiva_tuc.csv (Ativo Individual)
 2. descritiva_projetos.csv (Obra Consolidada PEP/ODI)
 """
